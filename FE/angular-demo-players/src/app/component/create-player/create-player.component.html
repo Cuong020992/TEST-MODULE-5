@@ -1,1 +1,31 @@
-<p>create-player works!</p>
+<h1>Tạo Player Mới</h1>
+<form [formGroup]="playerForm" (ngSubmit)=create()>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Champ</td>
+      <td><input type="text" formControlName="champ"></td>
+    </tr>
+    <tr>
+      <td>KDA</td>
+      <td><input type="text" formControlName="kda"></td>
+    </tr>
+    <tr>
+      <td>DES </td>
+      <td>
+        <textarea type="text" formControlName="des">
+
+        </textarea>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>CREATE</button>
+      </td>
+    </tr>
+  </table>
+</form>

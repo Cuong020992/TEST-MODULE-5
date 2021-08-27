@@ -13,6 +13,10 @@ export class PlayerService {
   constructor(private httpClient : HttpClient) { }
 
   getAll():Observable<Player[]>{
-    return this.httpClient.get<Player[]>(API_URL)
+    return this.httpClient.get<Player[]>(API_URL);
+  }
+
+  createPlayer(player:Player):Observable<Player>{
+    return this.httpClient.post<Player>(API_URL, player);
   }
 }
