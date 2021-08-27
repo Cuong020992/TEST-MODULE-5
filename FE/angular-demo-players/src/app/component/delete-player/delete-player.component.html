@@ -1,1 +1,38 @@
-<p>delete-player works!</p>
+<form [formGroup]="playerForm" (ngSubmit)="deletePlayer(id)" >
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" formControlName="name">
+      </td>
+    </tr><tr>
+    <tr>
+      <td>Champ</td>
+      <td>
+        <input type="text" formControlName="champ">
+      </td>
+    </tr><tr>
+    <td>KDA</td>
+    <td>
+      <input type="text" formControlName="kda">
+    </td>
+  </tr><tr>
+    <td>Des</td>
+    <td>
+      <input type="text" formControlName="des">
+    </td>
+  </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">DELETE</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a [routerLink]="['']">Thoát</a>
+      </td>
+    </tr>
+
+  </table>
+</form>

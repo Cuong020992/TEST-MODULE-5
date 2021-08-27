@@ -24,14 +24,15 @@ export class DeletePlayerComponent implements OnInit {
               private activeRouter: ActivatedRoute) {
     this.activeRouter.paramMap.subscribe((paraMap: ParamMap) => {
       this.id = paraMap.get('id');
-      this.deletePlayer(this.id)
+      // this.deletePlayer(this.id)
     })
   }
 
   ngOnInit(): void {
+    this.getPlayer(this.id)
   }
 
-  private getPlayer(id: any) {
+  public getPlayer(id: any) {
     this.playerService.getPlayerById(id).subscribe(data => {
       this.playerForm = new FormGroup({
         id: new FormControl(data.id),
@@ -45,10 +46,11 @@ export class DeletePlayerComponent implements OnInit {
   }
 
 
-  private deletePlayer(id: any) {
+  public deletePlayer(id: any) {
     console.log(id)
     this.playerService.deletePlayer(id).subscribe(data =>{
       this.router.navigate([''])
+      alert("Xoa thanh cong")
     })
   }
 }
