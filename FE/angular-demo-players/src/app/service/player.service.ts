@@ -19,4 +19,17 @@ export class PlayerService {
   createPlayer(player:Player):Observable<Player>{
     return this.httpClient.post<Player>(API_URL, player);
   }
+
+  updatePlayer(id:any,player:Player):Observable<Player>{
+    const idParam = Number(id);
+    return this.httpClient.put<Player>(API_URL + idParam, player)
+  }
+  deletePlayer(id:any):Observable<Player>{
+    const idParam = Number(id);
+    return this.httpClient.delete<Player>(API_URL + idParam)
+  }
+  getPlayerById(id:any):Observable<Player>{
+    const idParam = Number(id);
+    return this.httpClient.get<Player>(API_URL + idParam)
+  }
 }
