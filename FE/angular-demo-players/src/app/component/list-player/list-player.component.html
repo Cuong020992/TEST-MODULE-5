@@ -1,0 +1,27 @@
+
+<h1>Danh sách player</h1>
+<button  [routerLink]="['/create/']">Create Player</button>
+<table border="1">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Champ</td>
+    <td>KDA</td>
+    <td>des</td>
+    <td colspan="2">Action</td>
+
+  </tr>
+  <tr *ngFor="let player of players; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{player.name}}</td>
+    <td>{{player?.champ}}</td>
+    <td>{{player?.kda}}</td>
+    <td>{{player?.des}}</td>
+    <td>
+      <a [routerLink]="['/update/',player.id]">Update</a>
+    </td>
+    <td>
+      <a [routerLink]="['/delete/',player.id]">Delete</a>
+    </td>
+  </tr>
+</table>
